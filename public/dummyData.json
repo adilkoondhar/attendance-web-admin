@@ -1,0 +1,37 @@
+[
+  {
+    "ID": 1,
+    "Profile Image": "image",
+    "Name": "John Doe",
+    "Course Name": "Computer Science",
+    "Password": "password123"
+  },
+  {
+    "ID": 2,
+    "Profile Image": "image",
+    "Name": "Jane Doe",
+    "Course Name": "Software Engineering",
+    "Password": "password456"
+  },
+  {
+    "ID": 3,
+    "Profile Image": "image",
+    "Name": "Bob Smith",
+    "Course Name": "Information Systems",
+    "Password": "password789"
+  },
+  {
+    "ID": 4,
+    "Profile Image": "image",
+    "Name": "Alice Johnson",
+    "Course Name": "Data Science",
+    "Password": "password321"
+  },
+  {
+    "ID": 5,
+    "Profile Image": "image",
+    "Name": "Charlie Brown",
+    "Course Name": "Cybersecurity",
+    "Password": "password654"
+  }
+]
