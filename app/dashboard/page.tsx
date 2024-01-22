@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import AddStudent from "@/app/components/AddStudent";
+import StudentsList from "@/app/components/StudentsList";
+import dummyData from "@/public/dummyData.json";
 export default function Dashboard() {
+
+    const students = JSON.stringify(dummyData);
+    const studentsArray = JSON.parse(students);
+
     return (
         <main className="flex">
             <div className="bg-white flex flex-col items-center justify-between w-1/5 min-h-screen pt-16 pb-10">
-                <div className="flex flex-col items-center space-y-6">
+                <div className="fixed flex flex-col items-center space-y-6">
                 <h1 className="text-4xl font-bold mb-2">Logo</h1>
                 <div className="flex space-x-3.5 justify-start items-center w-60">
                     <div className="rounded-full w-14 h-14 bg-[#F5F5F5] flex justify-center items-center">
@@ -20,7 +26,7 @@ export default function Dashboard() {
                     <Link href="/attendance" className="text-2xl font-medium text-[#757474] hover:text-black">Attendance</Link>
                 </div>
                 </div>
-                <Link href="/login" className="text-2xl font-medium text-[#1E1E1E] ml-12 self-start hover:text-[#5C93FA]">Logout</Link>
+                <Link href="/login" className="fixed bottom-10 text-2xl font-medium text-[#1E1E1E] ml-12 self-start hover:text-[#5C93FA]">Logout</Link>
             </div>
             <div className="bg-[#F8F8F8] flex flex-col w-4/5 min-h-screen pt-14 pl-12 pr-16">
                 <div className="flex justify-between items-center">
@@ -32,18 +38,24 @@ export default function Dashboard() {
                     </div>
                     <AddStudent/>
                 </div>
-                <table className="mt-12">
-                    <thead className="bg-[#5C93FA] h-20 text-white shadow-all-sides">
-                    <tr>
-                        <th className="rounded-l-2xl pl-4 w-16">ID</th>
-                        <th className="w-40">Profile Image</th>
-                        <th className="w-40">Name</th>
-                        <th className="w-40">Course Name</th>
-                        <th className="w-40">Password</th>
-                        <th className="rounded-r-2xl w-48"></th>
-                    </tr>
-                    </thead>
-                </table>
+                
+                <div className="mt-12 mb-10 pl-4 pr-4 rounded-xl flex justify-between items-center bg-[#5C93FA] h-20 text-white shadow-all-sides font-semibold text-center">
+                        <div className="w-16">ID</div>
+                        <div className="w-40">Profile Image</div>
+                        <div className="w-52">Name</div>
+                        <div className="w-48">Course Name</div>
+                        <div className="w-40">Password</div>
+                        <div className="w-40"></div>
+                </div>
+                {studentsArray.map((student: {ID: number, ProfileImage: string, Name: string, CourseName: string, Password: string}) => (
+                    <StudentsList key={student.ID}
+                                  id={student.ID}
+                                  profile={student.ProfileImage}
+                                  name={student.Name}
+                                  course={student.CourseName}
+                                  password={student.Password}
+                    />
+                ))}
             </div>
         </main>
     )
