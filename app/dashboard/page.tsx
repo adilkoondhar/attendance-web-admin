@@ -17,13 +17,13 @@ export default function Dashboard() {
                     <div className="rounded-full w-14 h-14 bg-[#F5F5F5] flex justify-center items-center">
                         <Image src={"./studentIcon.svg"} alt={"student icon"} width={"25"} height={"30"}/>
                     </div>
-                    <Link href="/dashboard" className="text-2xl font-medium text-[#757474] hover:text-black">Students</Link>
+                    <Link href="/dashboard" className="text-2xl font-medium text-black">Students</Link>
                 </div>
                 <div className="flex space-x-3.5 justify-start items-center w-60">
                     <div className="rounded-full w-14 h-14 bg-[#F5F5F5] flex justify-center items-center">
                         <Image src={"./attendanceIcon.svg"} alt={"attendance icon"} width={"25"} height={"30"}/>
                     </div>
-                    <Link href="/attendance" className="text-2xl font-medium text-[#757474] hover:text-black">Attendance</Link>
+                    <Link href="/dashboard/attendance" className="text-2xl font-medium text-[#757474] hover:text-black">Attendance</Link>
                 </div>
                 </div>
                 <Link href="/login" className="fixed bottom-10 text-2xl font-medium text-[#1E1E1E] ml-12 self-start hover:text-[#5C93FA]">Logout</Link>
