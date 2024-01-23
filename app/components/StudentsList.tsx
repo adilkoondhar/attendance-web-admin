@@ -13,8 +13,8 @@ export default function StudentsList(props: {id: number, profile: string, name: 
             <div className="w-48">{course}</div>
             <div className="w-40">{password}</div>
             <div className="w-40 flex justify-center items-center space-x-12">
-                <Image className="cursor-pointer" src="./pen.svg" alt="pen" height="16" width="16" />
-                <Image className="cursor-pointer" src="./eye.svg" alt="pen" height="16" width="18" />
+                <Image className="cursor-pointer" src="./penIcon.svg" alt="pen" height="16" width="16" />
+                <Image className="cursor-pointer" src="./eyeIcon.svg" alt="pen" height="16" width="18" />
             </div>
         </div>
     )

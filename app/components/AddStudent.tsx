@@ -6,9 +6,16 @@ export default function AddStudent() {
         const slideoverContainer = document.getElementById('slideover-container');
         const slideoverBg = document.getElementById('slideover-bg');
         const slideover = document.getElementById('slideover');
+        const body = document.body;
 
         if (slideoverContainer) {
             slideoverContainer.classList.toggle('invisible');
+            // If slideoverContainer is visible, disable the scrollbar
+            if (slideoverContainer.classList.contains('invisible')) {
+                body.style.overflow = 'auto';
+            } else {
+                body.style.overflow = 'hidden';
+            }
         }
 
         if (slideoverBg) {
@@ -30,14 +37,87 @@ export default function AddStudent() {
 
             <div id="slideover-container" className="w-full h-full fixed inset-0 invisible">
                 <div onClick={toggleSlideover} id="slideover-bg"
-                     className="w-full h-full duration-500 ease-out transition-all inset-0 absolute bg-gray-300 opacity-0"></div>
+                     className="w-full h-full duration-500 ease-out transition-all inset-0 absolute bg-gray-300 opacity-0">
+                </div>
                 <div id="slideover"
-                     className="w-96 bg-white h-full absolute right-0 duration-300 ease-out transition-all translate-x-full">
-                    <div
-                        className="absolute cursor-pointer text-gray-600 top-0 w-8 h-8 flex items-center justify-center right-0 mt-5 mr-5">
+                     className="w-2/5 bg-white h-full absolute right-0 duration-300 ease-out transition-all translate-x-full">
+                    <div className="flex flex-col pt-10 pr-8 pl-8">
+                        <div className="flex space-x-8 items-center">
+                            <Image onClick={toggleSlideover} className="cursor-pointer hover:-translate-x-1 transition-transform" src="./leftArrowIcon.svg"
+                                   alt="leftArrow" width="30" height="30"/>
+                            <h1 className="font-bold text-3xl cursor-default">Add Student</h1>
+                            <button
+                                className="relative left-48 rounded-xl h-12 w-1/6 bg-[#5C92F7] shadow-all-sides font-semibold text-white transition-all hover:bg-[#4367B7] active:bg-[#314F8E]">Add
+                            </button>
+                        </div>
+                        <div className="bg-[#5C92F7] self-center relative top-20 rounded-full h-36 w-36 flex justify-end items-end">
+                            <div className="flex justify-center items-center rounded-full w-10 h-10 bg-[#D9D9D9]">
+                                <Image src="./cameraIcon.svg" alt="cameraIcon" width="20" height="20"/>
+                            </div>
+                        </div>
+
+                        <div className="relative top-36 flex flex-wrap space-x-6 space-y-3 justify-center items-center">
+                            <div className="flex flex-col justify-center items-start space-y-1 relative left-3">
+                                <label className="font-medium">First Name</label>
+                                <input
+                                    className="rounded-lg h-12 w-64 border-2 border-[#DBDADA] pl-2 focus:outline-[#5C93FA]"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center items-start space-y-1 relative left-3">
+                                <label className="font-medium">Last Name</label>
+                                <input
+                                    className="rounded-lg h-12 w-64 border-2 border-[#DBDADA] pl-2 focus:outline-[#5C93FA]"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center items-start space-y-1">
+                                <label className="font-medium">Course</label>
+                                <input
+                                    className="rounded-lg h-12 w-64 border-2 border-[#DBDADA] pl-2 focus:outline-[#5C93FA]"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center items-start space-y-1">
+                                <label className="font-medium">Password</label>
+                                <input
+                                    className="rounded-lg h-12 w-64 border-2 border-[#DBDADA] pl-2 focus:outline-[#5C93FA]"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center items-start space-y-1">
+                                <label className="font-medium">Email</label>
+                                <input
+                                    className="rounded-lg h-12 w-64 border-2 border-[#DBDADA] pl-2 focus:outline-[#5C93FA]"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center items-start space-y-1">
+                                <label className="font-medium">Phone number</label>
+                                <input
+                                    className="rounded-lg h-12 w-64 border-2 border-[#DBDADA] pl-2 focus:outline-[#5C93FA]"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     )
 }
+
+// Old toggleSlideover function
+
+// function toggleSlideover(): void {
+//     const slideoverContainer = document.getElementById('slideover-container');
+//     const slideoverBg = document.getElementById('slideover-bg');
+//     const slideover = document.getElementById('slideover');
+//
+//     if (slideoverContainer) {
+//         slideoverContainer.classList.toggle('invisible');
+//     }
+//
+//     if (slideoverBg) {
+//         slideoverBg.classList.toggle('opacity-0');
+//         slideoverBg.classList.toggle('opacity-50');
+//     }
+//
+//     if (slideover) {
+//         slideover.classList.toggle('translate-x-full');
+//     }
+// }
