@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import dummyAttendanceData from "@/public/dummyAttendanceData.json";
 export default function Attendance() {
+    const dummyAttendance = JSON.stringify(dummyAttendanceData);
+    const dummyAttendanceArray = JSON.parse(dummyAttendance);
+
     return (
         <main className="flex">
             <div className="bg-white flex flex-col items-center justify-between w-1/5 min-h-screen pt-16 pb-10">
@@ -38,6 +42,21 @@ export default function Attendance() {
                     <div className="w-56">Checked In Time</div>
                     <div className="w-56">Checked Out Time</div>
                 </div>
+
+                {dummyAttendanceArray.map((attendance: {ID: number, ProfileImage: string, Name: string, CheckedIn: string, CheckedOut: string}) => (
+                    <div key={attendance.ID} className="mb-6 pl-4 pr-4 rounded-md flex justify-between items-center bg-white h-20 text-center text-[#282827]">
+                        <div className="w-16">{attendance.ID}</div>
+                        <div className="w-40 flex justify-center items-center">
+                            <div className="rounded-full w-14 h-14 bg-[#F5F5F5] flex justify-center items-center text-[#282827]">
+                                {attendance.ProfileImage}
+                            </div>
+                        </div>
+                        <div className="w-52">{attendance.Name}</div>
+                        <div className="w-56">{attendance.CheckedIn}</div>
+                        <div className="w-56">{attendance.CheckedOut}</div>
+                    </div>
+                   ))}
+
             </div>
         </main>
     )
