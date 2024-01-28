@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import {navigate} from "@/app/actions";
 
 export default function SignupForm() {
     const [email, setEmail] = useState("");
@@ -24,7 +25,11 @@ export default function SignupForm() {
 
         const body = await response.json();
 
-        console.log(body.token || body.error);
+        if (body.token) {
+            await navigate("dashboard");
+        } else {
+            console.log(body.error);
+        }
     }
 
     return (
