@@ -26,6 +26,7 @@ export default function SignupForm() {
         const body = await response.json();
 
         if (body.token) {
+            localStorage.setItem("token", body.token);
             await navigate("dashboard");
         } else {
             console.log(body.error);

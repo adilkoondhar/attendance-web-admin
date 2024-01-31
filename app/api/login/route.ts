@@ -34,13 +34,18 @@ export async function POST(req: NextRequest) {
         }
 
         // Generate a JWT token
-        const payload = { id: existingUser._id };
+        const payload = {
+            id: existingUser._id,
+            email: existingUser.email
+        };
         const token = jwt.sign(payload, process.env.JWT_SECRET as string, {
             expiresIn: '1d', // Token expires in 1 day
         });
 
         // Return the JWT token
-        return NextResponse.json({ token }, {
+        return NextResponse.json({
+            token
+        }, {
             status: 200
 
         });
