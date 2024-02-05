@@ -8,12 +8,16 @@ import {navigate} from "@/app/actions";
 
 export default function Dashboard() {
 
-    const token = localStorage.getItem("token");
+    let token;
+
+    try {
+        token = localStorage.getItem("token");
+    } catch (e) {
+        token = null;
+    }
 
     const students = JSON.stringify(dummyData);
     const studentsArray = JSON.parse(students);
-
-    console.log(token);
 
     if(token) {
         return (
@@ -23,7 +27,7 @@ export default function Dashboard() {
                         <h1 className="text-4xl font-bold mb-2">Logo</h1>
                         <div className="flex space-x-3.5 justify-start items-center w-60">
                             <div className="rounded-full w-14 h-14 bg-[#F5F5F5] flex justify-center items-center">
-                                <Image src={"./studentIcon.svg"} alt={"student icon"} width={"25"} height={"30"}/>
+                                <Image src={"./studentIcon.svg"} alt={"add icon"} width={"25"} height={"30"}/>
                             </div>
                             <Link href="/dashboard" className="text-2xl font-medium text-black">Students</Link>
                         </div>
@@ -43,7 +47,7 @@ export default function Dashboard() {
                     <div className="flex justify-between items-center">
                         <div className="flex justify-center items-center space-x-6">
                             <div className="rounded-full w-20 h-20 bg-[#5C93FA] flex justify-center items-center">
-                                <Image src={"./studentIconWhite.svg"} alt={"student icon"} width={"25"} height={"30"}/>
+                                <Image src={"./studentIconWhite.svg"} alt={"add icon"} width={"25"} height={"30"}/>
                             </div>
                             <h1 className="text-4xl font-bold mb-2">Students</h1>
                         </div>
