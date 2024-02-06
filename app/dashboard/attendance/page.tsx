@@ -2,13 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import dummyAttendanceData from "@/public/dummyAttendanceData.json";
-import {navigate} from "@/app/actions";
+import { useRouter } from "next/navigation";
 export default function Attendance() {
 
-    let token;
+    const router = useRouter();
+
+    let token: any = null;
 
     try {
-        token = localStorage.getItem("token");
+        token = localStorage.getItem('token');
     } catch (e) {
         token = null;
     }
@@ -86,6 +88,6 @@ export default function Attendance() {
             </main>
         )
     } else {
-        navigate("login");
+        router.push("/login");
     }
 }

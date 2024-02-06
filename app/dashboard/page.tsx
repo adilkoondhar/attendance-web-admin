@@ -4,14 +4,15 @@ import Link from "next/link";
 import AddStudent from "@/app/components/AddStudent";
 import StudentsList from "@/app/components/StudentsList";
 import dummyData from "@/public/dummyData.json";
-import {navigate} from "@/app/actions";
-
+import {useRouter} from "next/navigation";
 export default function Dashboard() {
 
-    let token;
+    const router = useRouter();
+
+    let token: any = null;
 
     try {
-        token = localStorage.getItem("token");
+        token = localStorage.getItem('token');
     } catch (e) {
         token = null;
     }
@@ -82,6 +83,6 @@ export default function Dashboard() {
             </main>
         )
     } else {
-        navigate("login");
+        router.push('login');
     }
 }
