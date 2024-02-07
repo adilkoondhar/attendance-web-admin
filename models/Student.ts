@@ -47,6 +47,12 @@ const StudentSchema = new mongoose.Schema({
 
 StudentSchema.plugin(AutoIncrement, {inc_field: 'id'});
 
-const Student = mongoose.model('Student', StudentSchema);
+let StudentModel: mongoose.Model<any>;
 
-export default Student;
+if (mongoose.models.Student) {
+    StudentModel = mongoose.model('Student');
+} else {
+    StudentModel = mongoose.model('Student', StudentSchema);
+}
+
+export default StudentModel;
