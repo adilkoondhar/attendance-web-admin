@@ -1,4 +1,4 @@
-import mongoose, { ConnectOptions } from 'mongoose';
+import mongoose from 'mongoose';
 
 const connection: { isConnected?: number } = {};
 
@@ -9,10 +9,7 @@ async function dbConnect(): Promise<void> {
         return;
     }
 
-    const db = await mongoose.connect(DATABASE_URI as string, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    } as ConnectOptions);
+    const db = await mongoose.connect(DATABASE_URI as string);
 
     connection.isConnected = db.connections[0].readyState;
 }
