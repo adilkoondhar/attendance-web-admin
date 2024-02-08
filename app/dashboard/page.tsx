@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import AddStudent from "@/app/components/AddStudent";
 import StudentsList from "@/app/components/StudentsList";
-import dummyData from "@/public/dummyData.json";
 import {useRouter} from "next/navigation";
+import {Suspense} from "react";
 export default function Dashboard() {
 
     const router = useRouter();
@@ -17,8 +17,6 @@ export default function Dashboard() {
         token = null;
     }
 
-    const students = JSON.stringify(dummyData);
-    const studentsArray = JSON.parse(students);
 
     if(token) {
         return (
@@ -64,21 +62,9 @@ export default function Dashboard() {
                         <div className="w-40">Password</div>
                         <div className="w-40"></div>
                     </div>
-                    {studentsArray.map((student: {
-                        ID: number,
-                        ProfileImage: string,
-                        Name: string,
-                        CourseName: string,
-                        Password: string
-                    }) => (
-                        <StudentsList key={student.ID}
-                                      id={student.ID}
-                                      profile={student.ProfileImage}
-                                      name={student.Name}
-                                      course={student.CourseName}
-                                      password={student.Password}
-                        />
-                    ))}
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <StudentsList />
+                    </Suspense>
                 </div>
             </main>
         )
