@@ -19,6 +19,12 @@ const AttendanceSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-const Attendance = mongoose.model('Attendance', AttendanceSchema);
+let AttendanceModel: mongoose.Model<any>;
 
-export default Attendance;
+if (mongoose.models.Attendance) {
+  AttendanceModel = mongoose.model('Attendance');
+} else {
+  AttendanceModel = mongoose.model('Attendance', AttendanceSchema);
+}
+
+export default AttendanceModel;
