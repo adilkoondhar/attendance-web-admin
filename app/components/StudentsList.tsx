@@ -23,8 +23,8 @@ export default function StudentsList() {
                         <div className="w-48">{student.course}</div>
                         <div className="w-40">{student.password.slice(0, 8).replace(/./g, '*')}</div>
                         <div className="w-40 flex justify-center items-center space-x-12">
-                            <Image className="cursor-pointer" src="./penIcon.svg" alt="pen" height="16" width="16"/>
-                            <Image className="cursor-pointer" src="./eyeIcon.svg" alt="pen" height="16" width="18"/>
+                            <Link href={`/dashboard?edit=${student.id}`}><Image className="cursor-pointer" src="./penIcon.svg" alt="pen" height="16" width="16"/></Link>
+                            <Image className="cursor-pointer" src="./eyeIcon.svg" alt="pen" height="16" width="18" onClick={() => {alert("Can't display encrypted password!")}}/>
                         </div>
                     </div>
                 ))}
