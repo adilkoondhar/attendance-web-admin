@@ -8,6 +8,9 @@ A web application for administrators to manage student attendance using Next.js 
 - **Signup:** Users can create an account by providing necessary details.
 - **Login:** Registered users can securely log in to their accounts.
 
+### Dashboard
+- **Admin Dashboard:** Admins can access dashboard to view all the students.
+
 ## Technologies Used
 
 - **TypeScript:** A statically typed superset of JavaScript that adds optional types, classes, and modules to the language, providing enhanced tooling and developer productivity.
