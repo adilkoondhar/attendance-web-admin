@@ -21,3 +21,4 @@ A web application for administrators to manage student attendance using Next.js 
 - **jsonwebtoken:** A library that helps in the generation of JWTs (JSON Web Tokens) used for secure transmission of information between parties.
 - **Next.js:** A React framework that enables functionality such as server-side rendering and generating static websites for React based web applications.
 - **MongoDB:** A source-available cross-platform document-oriented database program, classified as a NoSQL database program. MongoDB uses JSON-like documents with optional schemas.
+- **Tailwind CSS:** A utility-first CSS framework that is used to rapidly build websites with a consistent design language, without writing a lot of custom CSS.
