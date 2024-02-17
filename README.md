@@ -10,6 +10,7 @@ A web application for administrators to manage student attendance using Next.js 
 
 ### Dashboard
 - **Admin Dashboard:** Admins can access dashboard to view all the students.
+- **Manage Students:** Admins can add and update students.
 
 ## Technologies Used
 
