@@ -1,6 +1,6 @@
 # attendance-web-admin
 
-A web application for administrators to manage student attendance using Next.js and the MERN stack.
+Attendance Web Admin is a robust web application designed for administrators to efficiently manage student attendance. It is built using the MERN stack and Next.js, providing a seamless and interactive user experience.
 
 ## Features
 
