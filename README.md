@@ -14,12 +14,12 @@ Attendance Web Admin is a robust web application designed for administrators to 
 
 ## Technologies Used
 
-- **TypeScript:** A statically typed superset of JavaScript that adds optional types, classes, and modules to the language, providing enhanced tooling and developer productivity.
-- **JavaScript:** A high-level, interpreted scripting language that is used to make web pages interactive.
-- **npm:** A package manager for the JavaScript programming language, which is the default package manager for the JavaScript runtime environment Node.js.
-- **React:** A JavaScript library for building user interfaces, primarily for single-page applications. It's used for handling the view layer in web and mobile apps.
-- **bcryptjs:** A library to help you hash passwords, providing cryptographic functionality.
-- **jsonwebtoken:** A library that helps in the generation of JWTs (JSON Web Tokens) used for secure transmission of information between parties.
-- **Next.js:** A React framework that enables functionality such as server-side rendering and generating static websites for React based web applications.
-- **MongoDB:** A source-available cross-platform document-oriented database program, classified as a NoSQL database program. MongoDB uses JSON-like documents with optional schemas.
-- **Tailwind CSS:** A utility-first CSS framework that is used to rapidly build websites with a consistent design language, without writing a lot of custom CSS.
+- **TypeScript:** Enhances JavaScript with static typing, classes, and modules for improved developer productivity.
+- **JavaScript:** A versatile scripting language used for building interactive web pages.
+- **npm:** The default package manager for Node.js, facilitating easy dependency management.
+- **React:** A powerful library for building user interfaces, particularly well-suited for single-page applications.
+- **bcryptjs:** Simplifies password hashing, ensuring robust cryptographic security.
+- **jsonwebtoken:** Enables the generation of JSON Web Tokens (JWTs) for secure data transmission.
+- **Next.js:** A React framework offering features like server-side rendering and static site generation.
+- **MongoDB:** A flexible NoSQL database program utilizing JSON-like documents for data storage.
+- **Tailwind CSS:** A utility-first CSS framework for creating sleek, consistent designs with minimal custom styling.
