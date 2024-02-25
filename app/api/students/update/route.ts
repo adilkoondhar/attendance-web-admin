@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
             const hashedPassword = await bcrypt.hash(password, 10);
 
             // Update the user
-            const updatedUser = await User.findByIdAndUpdate(id, {
+            const updatedUser = await User.findOneAndUpdate({ id }, {
                 image,
                 firstName,
                 lastName,
